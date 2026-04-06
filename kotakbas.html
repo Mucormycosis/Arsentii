@@ -1,58 +1,19 @@
-<Doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title> Выполнение тех задания</title>
-    <style>
-        /* дизайн в процессе */
-     body{
-        background-color:#D1CB92;
-     }
-     .button{
-        padding : 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border:none;
-        border-radius: 5px;
-        cursor: pointer;
-     }
-     .button:hover {
-        background-color: #0056b3;
-     }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stilek.css">
+  <script src="scrip.js" defer></script>
+  <title>Выполнение тех задания</title>
 </head>
 <body>
-    <!-- окно для картинки плюс кнопка-->
-    <div style="display: flex;flex-direction: column; justify-content: center; align-items: center;height: 100vh; gap: 10px;">
-    <p>Точка спавна</p>
-    <img  id="imageBox" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFz5fYgrepcP696Zm4ZtlldGLC6hEr83HUhDcUWJoyK2l-Rqp2YrkMskunDA_R5Hy-722xpQrOgG2-ZhAuOhuQ1aBRtwaf4jp3tfRNlNQKmg&s=10" width="300" height="200">
+  <div class="container">   
+    <img id="loader" src="https://i.gifer.com/ZZ5H.gif" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFz5fYgrepcP696Zm4ZtlldGLC6hEr83HUhDcUWJoyK2l-Rqp2YrkMskunDA_R5Hy-722xpQrOgG2-ZhAuOhuQ1aBRtwaf4jp3tfRNlNQKmg&s=10" class="image" style="display:none;" width="300" height="200">
+    <img id="imageBox" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFz5fYgrepcP696Zm4ZtlldGLC6hEr83HUhDcUWJoyK2l-Rqp2YrkMskunDA_R5Hy-722xpQrOgG2-ZhAuOhuQ1aBRtwaf4jp3tfRNlNQKmg&s=10" width="300" height="200">
     <button type="button" id="Get-random-cat" class="button">Рандом кот</button>
-    <h1>пошла возня!!!!!1</h1>
-    </div> 
-<script>
-    // ебатория с fetch и покдключения кнопки к картинкам
-    const button = document.getElementById('Get-random-cat');
-    const API_KEY = "live_gsFqodKkKd4zY24CCvOHn6rfaJpUQs22RFHS4lE8KfgsEEgiX5Y6w76tVYhoS4MM"
-    button.addEventListener('click',function(){
-        fetch('https://api.thecatapi.com/v1/images/search', {
-            headers : {
-                'x-api-key':API_KEY
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-        const url = data[0].url;
-      document.getElementById('imageBox').src=url;
-      })
-    .catch(err => console.error(err));
-    });
+  </div>
     
-    
-</script>
+            
 </body>
- 
- 
-
-
-<!-- тут был api key  -->
+</html>
